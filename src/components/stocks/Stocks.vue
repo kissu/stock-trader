@@ -1,10 +1,24 @@
-<template lang='pug'>
+<template lang="pug">
   div
-    h2 Here are all the stocks
+    app-stock(v-for="stock in stocks")
 </template>
 
 <script>
-export default {
+  import Stock from './Stock.vue'
 
+  export default {
+  data() {
+    return {
+      stocks: [
+        { id: 1, name: 'Ferrari', price: 50},
+        { id: 2, name: 'Lambo', price: 100},
+        { id: 3, name: 'Audi', price: 150},
+        { id: 4, name: 'Lotus', price: 200},
+      ]
+    }
+  },
+  components: {
+    appStock: Stock
+  }
 }
 </script>
