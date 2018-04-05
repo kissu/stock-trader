@@ -13,7 +13,7 @@
           li
             a(href='#') Link
 
-        strong(class='navbar-text navbar-right') Funds: {{ funds }}
+        strong(class='navbar-text navbar-right') Funds: {{ funds | currency }}
         ul(class='nav navbar-nav navbar-right')
           li
             a(href="#") End Day

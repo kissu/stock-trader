@@ -4,7 +4,7 @@
     h6 Save & Load Data
     h6 End of the day
     hr
-    p Your funds: {{ funds }}
+    p Your funds: {{ funds | currency }}
 </template>
 
 <script>
