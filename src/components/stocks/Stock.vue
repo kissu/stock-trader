@@ -10,7 +10,7 @@
         .pull-right
           button(class='btn btn-danger'
             @click='buyStock'
-            :disabled='quantity < 1') Buy
+            :disabled="insufficientFunds || quantity < 1") {{ insufficientFunds ? '$$$' : 'Buy' }}
 </template>
 
 <script>
@@ -19,6 +19,14 @@ export default {
   data() {
     return {
       quantity: 0
+    }
+  },
+  computed: {
+    funds() {
+      return this.$store.getters.funds
+    },
+    insufficientFunds() {
+      return this.quantity * this.stock.price > this.funds
     }
   },
   methods: {

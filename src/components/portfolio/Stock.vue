@@ -10,7 +10,7 @@
         .pull-right
           button(class='btn btn-danger'
             @click='sellStock'
-            :disabled='quantity < 1') Sell
+            :disabled='insufficientQuantity || quantity < 1') {{ insufficientFunds ? '$$$' : 'Sell' }}
 </template>
 
 <script>
@@ -21,6 +21,11 @@
     data() {
       return {
         quantity: 0
+      }
+    },
+    computed: {
+      insufficientQuantity() {
+        return this.quantity > this.stock.quantity
       }
     },
     methods: {
