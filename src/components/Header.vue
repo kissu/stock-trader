@@ -13,6 +13,7 @@
           li
             a(href='#') Link
 
+        strong(class: 'navbar-text navbar-right') Funds: {{ funds }}
         ul(class='nav navbar-nav navbar-right')
           li
             a(href="#") End Day
@@ -32,3 +33,13 @@
                 a(href='#') Load Data
 
 </template>
+
+<script>
+  export default {
+    computed: {
+      funds() {
+        return this.$store.getters.funds
+      }
+    }
+  }
+</script>
