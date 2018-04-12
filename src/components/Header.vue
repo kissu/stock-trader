@@ -28,7 +28,7 @@
 
             ul(class='dropdown-menu')
               li
-                a(href='#') Save Data
+                a(href='#' @click="saveData") Save Data
               li
                 a(href='#') Load Data
 
@@ -54,6 +54,14 @@
       ]),
       endDay() {
         this.randomizeStocks()
+      },
+      saveData() {
+        const data = {
+          funds: this.$store.getters.funds,
+          stockPortfolio: this.$store.getters.stocksPOrtfolio,
+          stocks: this.$store.getters.stocks
+        }
+        this.$http.put('data.json', data)
       }
     }
   }
