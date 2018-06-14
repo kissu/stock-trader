@@ -1,6 +1,8 @@
-# vue-cli
+# Stock Trader
 
-> A Vue.js project
+The project can be found on [Netlify](https://stock-trader.netlify.com)
+
+or [Github Pages](https://kissu.github.io/stock-trader)
 
 ## Build Setup
 
